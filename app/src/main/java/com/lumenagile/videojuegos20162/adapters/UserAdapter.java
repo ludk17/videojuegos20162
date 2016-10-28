@@ -43,11 +43,19 @@ public class UserAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         // Para poder setear al adapter una view (layout item)
-        LayoutInflater inflater = activity.getLayoutInflater();
-        view = inflater.inflate(R.layout.item_user, viewGroup);
+        if(view == null)
+        {
+            LayoutInflater inflater = activity.getLayoutInflater();
+            view = inflater.inflate(R.layout.item_user, null);
+        }
+
+        User user = getItem(i);
 
         TextView tvNombre = (TextView)view.findViewById(R.id.tvNombre);
-        tvNombre.setText("Cualquier cosa");
+        tvNombre.setText(user.getNombre());
+
+        TextView tvTelefono = (TextView)view.findViewById(R.id.tvTelefono);
+        tvTelefono.setText(user.getTelefono());
 
         return view;
     }

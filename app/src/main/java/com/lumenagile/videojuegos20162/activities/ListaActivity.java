@@ -20,10 +20,14 @@ public class ListaActivity extends AppCompatActivity {
 
         List<User> users = new LinkedList<>();
         users.add(new User(1, "Luis Mendoza", "9999999999"));
-        users.add(new User(2, "Francisco Bonaparte", "9999999999"));
+        users.add(new User(2, "Francisco Bonaparte", "888888888"));
+        users.add(new User(3, "Roberto Bolaños", "888888888"));
+        users.add(new User(4, "Lionel Messi", "888888888"));
+        users.add(new User(5, "Cristiano Ronaldo", "888888888"));
+        users.add(new User(6, "Ronaldo el cristiano", "888888888"));
 
         ListView lista = (ListView)findViewById(R.id.lista_personas);
-        UserAdapter adapter = new UserAdapter(ListaActivity.this, users);
+        UserAdapter adapter = new UserAdapter(this, users);
         lista.setAdapter(adapter);
 
     }
